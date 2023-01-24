@@ -1,10 +1,14 @@
-import { Application } from 'express';
 import Logger from 'bunyan';
-import { config } from './config';
-import { authRoutes } from '@auth/routes/authRoutes';
-import { serverAdapter } from '@services/queues/base.queue';
-import { currentUserRoute } from '@auth/routes/currentUserRoute';
+import { Application } from 'express';
+
 import { authMiddleware } from '@global/helpers/auth-middleware';
+
+import { authRoutes } from '@auth/routes/authRoutes';
+import { currentUserRoute } from '@auth/routes/currentUserRoute';
+
+import { serverAdapter } from '@services/queues/base.queue';
+
+import { config } from './config';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const log: Logger = config.createLogger('server');

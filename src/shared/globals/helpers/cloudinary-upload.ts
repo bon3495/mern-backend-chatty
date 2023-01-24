@@ -1,6 +1,6 @@
 import cloudinary, {
-  UploadApiResponse,
   UploadApiErrorResponse,
+  UploadApiResponse,
 } from 'cloudinary';
 
 export function uploads(
