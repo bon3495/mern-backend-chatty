@@ -103,7 +103,7 @@ export class UserCache extends BaseCache {
       await this.client.HSET(`users:${key}`, dataToSave);
     } catch (error) {
       log.error(error);
-      throw new ServerError('Server error. Try again.');
+      throw new ServerError('Server error. Try again');
     }
   }
 
@@ -139,7 +139,7 @@ export class UserCache extends BaseCache {
       return userFromCache;
     } catch (error) {
       log.error(error);
-      throw new ServerError('Server error. Try again.');
+      throw new ServerError('Server error. Try again');
     }
   }
 }

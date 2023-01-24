@@ -24,7 +24,7 @@ withCredentials: true
 
 {
   "username": "bontran2",
-  "password": "23231323"
+  "password": "bon34199"
 }
 
 ###
@@ -38,3 +38,24 @@ GET {{baseUrl}}/{{urlPath}}/currentuser
 Content-Type: application/json
 Accept: application/json
 withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/forgot-password
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "email": "bontran2@gmail.com"
+}
+
+###
+POST {{baseUrl}}/{{urlPath}}/reset-password/5995453e88106192006edc6922dce34ddb3ee928
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "password": "bon34199",
+  "confirmPassword": "bon34199"
+}

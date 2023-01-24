@@ -32,7 +32,7 @@ class AuthMiddleware {
   ): void {
     if (!req.currentUser) {
       throw new NotAuthorizedError(
-        'Authentication is required to access this route.'
+        'Authentication is required to access this route'
       );
     }
     next();
