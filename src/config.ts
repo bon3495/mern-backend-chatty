@@ -15,34 +15,30 @@ class Config {
   public CLOUD_NAME: string | undefined;
   public CLOUD_API_KEY: string | undefined;
   public CLOUD_API_SECRET: string | undefined;
+  public SENDER_EMAIL: string | undefined;
+  public SENDER_EMAIL_PASSWORD: string | undefined;
+  public SENDGRID_API_KEY: string | undefined;
+  public SENDGRID_SENDER: string | undefined;
 
   private readonly DEFAULT_DATABASE_URL =
     'mongodb://localhost:27017/chattyapp-backend';
   private readonly DEFAULT_JWT_TOKEN = 'thisistoken';
-  private readonly DEFAULT_NODE_ENV = '';
-  private readonly DEFAULT_SECRET_KEY_ONE = '';
-  private readonly DEFAULT_SECRET_KEY_TWO = '';
-  private readonly DEFAULT_CLIENT_URL = '';
-  private readonly DEFAULT_REDIS_HOST = '';
-  private readonly CLOUD_DEFAULT_NAME = '';
-  private readonly CLOUD_DEFAULT_API_KEY = '';
-  private readonly CLOUD_DEFAULT_API_SECRET = '';
 
   constructor() {
     this.DATABASE_URL = process.env.DATABASE_URL || this.DEFAULT_DATABASE_URL;
     this.JWT_TOKEN = process.env.JWT_TOKEN || this.DEFAULT_JWT_TOKEN;
-    this.NODE_ENV = process.env.NODE_ENV || this.DEFAULT_NODE_ENV;
-    this.SECRET_KEY_ONE =
-      process.env.SECRET_KEY_ONE || this.DEFAULT_SECRET_KEY_ONE;
-    this.SECRET_KEY_TWO =
-      process.env.SECRET_KEY_TWO || this.DEFAULT_SECRET_KEY_TWO;
-    this.CLIENT_URL = process.env.CLIENT_URL || this.DEFAULT_CLIENT_URL;
-    this.REDIS_HOST = process.env.REDIS_HOST || this.DEFAULT_REDIS_HOST;
-    this.CLOUD_NAME = process.env.CLOUD_NAME || this.CLOUD_DEFAULT_NAME;
-    this.CLOUD_API_KEY =
-      process.env.CLOUD_API_KEY || this.CLOUD_DEFAULT_API_KEY;
-    this.CLOUD_API_SECRET =
-      process.env.CLOUD_API_SECRET || this.CLOUD_DEFAULT_API_SECRET;
+    this.NODE_ENV = process.env.NODE_ENV || '';
+    this.SECRET_KEY_ONE = process.env.SECRET_KEY_ONE || '';
+    this.SECRET_KEY_TWO = process.env.SECRET_KEY_TWO || '';
+    this.CLIENT_URL = process.env.CLIENT_URL || '';
+    this.REDIS_HOST = process.env.REDIS_HOST || '';
+    this.CLOUD_NAME = process.env.CLOUD_NAME || '';
+    this.CLOUD_API_KEY = process.env.CLOUD_API_KEY || '';
+    this.CLOUD_API_SECRET = process.env.CLOUD_API_SECRET || '';
+    this.SENDER_EMAIL = process.env.SENDER_EMAIL || '';
+    this.SENDER_EMAIL_PASSWORD = process.env.SENDER_EMAIL_PASSWORD || '';
+    this.SENDGRID_API_KEY = process.env.SENDGRID_API_KEY || '';
+    this.SENDGRID_SENDER = process.env.SENDGRID_SENDER || '';
   }
 
   public createLogger(name: string): bunyan {

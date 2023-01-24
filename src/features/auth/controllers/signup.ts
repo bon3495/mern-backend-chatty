@@ -52,7 +52,7 @@ export class SignUp {
 
     // If has error it will not return any public_id
     if (!resultUpload.public_id) {
-      throw new BadRequestError('File upload: Error occurred.Try again.');
+      throw new BadRequestError('File upload: Error occurred.Try again');
     }
 
     // Add user to redis cache
