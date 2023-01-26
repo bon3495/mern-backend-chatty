@@ -15,10 +15,10 @@ import { Helpers } from '@global/helpers/helpers';
 import { IAuthDocument, ISignUpData } from '@auth/interfaces/auth.interface';
 import { signupSchema } from '@auth/schemas/signup';
 
-import { authService } from '@services/db/auth.service';
-import { authQueue } from '@services/queues/auth.queue';
-import { userQueue } from '@services/queues/user.queue';
-import { UserCache } from '@services/redis/user.cache';
+import { authService } from '@service/db/auth.service';
+import { authQueue } from '@service/queues/auth.queue';
+import { userQueue } from '@service/queues/user.queue';
+import { UserCache } from '@service/redis/user.cache';
 
 import { IUserDocument } from '@user/interfaces/user.interface';
 
@@ -85,7 +85,7 @@ export class SignUp {
     req.session = { jwt: userJwt };
 
     res.status(HTTP_STATUS.CREATED).json({
-      message: 'User created successfully!',
+      message: 'User created successfully',
       user: userDataForCache,
       token: userJwt,
     });

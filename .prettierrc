@@ -5,10 +5,10 @@
   "importOrder": [
     "^@root/(.*)$",
     "^@global/(.*)$",
-    "^@workers/(.*)$",
+    "^@worker/(.*)$",
     "^@auth/(.*)$",
-    "^@services/(.*)$",
-    "^@sockets/(.*)$",
+    "^@service/(.*)$",
+    "^@socket/(.*)$",
     "^@user/(.*)$",
     "^[./]"
   ],

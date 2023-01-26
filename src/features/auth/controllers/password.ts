@@ -1,5 +1,9 @@
 import crypto from 'crypto';
 
+import { authService } from '@service/db/auth.service';
+import { forgotPasswordTemplate } from '@service/emails/templates/forgot-password';
+import { resetPasswordTemplate } from '@service/emails/templates/reset-password';
+import { emailQueue } from '@service/queues/email.queue';
 import { Request, Response } from 'express';
 import HTTP_STATUS from 'http-status-codes';
 import publicIP from 'ip';
@@ -12,11 +16,6 @@ import { BadRequestError } from '@global/helpers/error-handler';
 
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
 import { emailSchema, passwordSchema } from '@auth/schemas/password';
-
-import { authService } from '@services/db/auth.service';
-import { forgotPasswordTemplate } from '@services/emails/templates/forgot-password';
-import { resetPasswordTemplate } from '@services/emails/templates/reset-password';
-import { emailQueue } from '@services/queues/email.queue';
 
 import { IResetPasswordParams } from '@user/interfaces/user.interface';
 

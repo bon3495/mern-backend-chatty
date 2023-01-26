@@ -10,8 +10,8 @@ import { BadRequestError } from '@global/helpers/error-handler';
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
 import { loginSchema } from '@auth/schemas/signin';
 
-import { authService } from '@services/db/auth.service';
-import { userService } from '@services/db/user.service';
+import { authService } from '@service/db/auth.service';
+import { userService } from '@service/db/user.service';
 
 import { IUserDocument } from '@user/interfaces/user.interface';
 
@@ -57,7 +57,7 @@ export class SignIn {
     } as IUserDocument;
 
     res.status(HTTP_STATUS.OK).json({
-      message: 'User login successfully!',
+      message: 'User login successfully',
       user: userDocument,
       token: userJwt,
     });

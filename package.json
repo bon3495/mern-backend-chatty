@@ -10,7 +10,7 @@
     "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
     "prettier:fix": "prettier --write 'src/**/*.{ts,json}'",
     "build": "ttsc -p .",
-    "test": "jest"
+    "test": "jest --coverage=true -w=1 --forceExit --detectOpenHandles --watchAll=true"
   },
   "keywords": [],
   "author": "",
@@ -67,7 +67,7 @@
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
-    "jest": "^29.4.0",
+    "jest": "^29.4.1",
     "prettier": "^2.8.3",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",

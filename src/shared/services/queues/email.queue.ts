@@ -1,4 +1,4 @@
-import { emailWorker } from '@workers/email.worker';
+import { emailWorker } from '@worker/email.worker';
 
 import { IEmailJob } from '@user/interfaces/user.interface';
 

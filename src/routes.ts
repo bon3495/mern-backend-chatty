@@ -1,3 +1,4 @@
+import { serverAdapter } from '@service/queues/base.queue';
 import Logger from 'bunyan';
 import { Application } from 'express';
 
@@ -5,8 +6,6 @@ import { authMiddleware } from '@global/helpers/auth-middleware';
 
 import { authRoutes } from '@auth/routes/authRoutes';
 import { currentUserRoute } from '@auth/routes/currentUserRoute';
-
-import { serverAdapter } from '@services/queues/base.queue';
 
 import { config } from './config';
 

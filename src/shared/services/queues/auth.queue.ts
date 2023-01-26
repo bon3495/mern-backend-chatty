@@ -1,4 +1,4 @@
-import { authWorker } from '@workers/auth.worker';
+import { authWorker } from '@worker/auth.worker';
 
 import { IAuthJob } from '@auth/interfaces/auth.interface';
 
