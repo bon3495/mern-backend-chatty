@@ -1,10 +1,13 @@
-import Queue, { Job } from 'bull';
-import Logger from 'bunyan';
 import { createBullBoard } from '@bull-board/api';
 import { BullAdapter } from '@bull-board/api/bullAdapter';
 import { ExpressAdapter } from '@bull-board/express';
+import Queue, { Job } from 'bull';
+import Logger from 'bunyan';
+
 import { config } from '@root/config';
+
 import { IAuthJob } from '@auth/interfaces/auth.interface';
+
 import { IEmailJob } from '@user/interfaces/user.interface';
 
 type IBaseJobData = IAuthJob | IEmailJob;

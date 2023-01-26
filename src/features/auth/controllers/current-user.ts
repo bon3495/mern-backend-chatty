@@ -1,8 +1,10 @@
-import HTTP_STATUS from 'http-status-codes';
 import { Request, Response } from 'express';
-import { UserCache } from '@services/redis/user.cache';
+import HTTP_STATUS from 'http-status-codes';
+
+import { userService } from '@service/db/user.service';
+import { UserCache } from '@service/redis/user.cache';
+
 import { IUserDocument } from '@user/interfaces/user.interface';
-import { userService } from '@services/db/user.service';
 
 const userCache: UserCache = new UserCache();
 

@@ -1,17 +1,22 @@
-import { forgotPasswordTemplate } from '@services/emails/templates/forgot-password';
+import crypto from 'crypto';
+
+import { authService } from '@service/db/auth.service';
+import { forgotPasswordTemplate } from '@service/emails/templates/forgot-password';
+import { resetPasswordTemplate } from '@service/emails/templates/reset-password';
+import { emailQueue } from '@service/queues/email.queue';
+import { Request, Response } from 'express';
 import HTTP_STATUS from 'http-status-codes';
 import publicIP from 'ip';
 import moment from 'moment';
-import { Request, Response } from 'express';
+
 import { config } from '@root/config';
-import crypto from 'crypto';
+
 import { joiValidation } from '@global/decorators/joi-validation.decorators';
-import { emailSchema, passwordSchema } from '@auth/schemas/password';
-import { IAuthDocument } from '@auth/interfaces/auth.interface';
-import { authService } from '@services/db/auth.service';
 import { BadRequestError } from '@global/helpers/error-handler';
-import { emailQueue } from '@services/queues/email.queue';
-import { resetPasswordTemplate } from '@services/emails/templates/reset-password';
+
+import { IAuthDocument } from '@auth/interfaces/auth.interface';
+import { emailSchema, passwordSchema } from '@auth/schemas/password';
+
 import { IResetPasswordParams } from '@user/interfaces/user.interface';
 
 export class Password {

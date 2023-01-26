@@ -1,14 +1,19 @@
-import JWT from 'jsonwebtoken';
-import HTTP_STATUS from 'http-status-codes';
 import { Request, Response } from 'express';
-import { IAuthDocument } from '@auth/interfaces/auth.interface';
-import { BadRequestError } from '@global/helpers/error-handler';
-import { authService } from '@services/db/auth.service';
-import { joiValidation } from '@global/decorators/joi-validation.decorators';
-import { loginSchema } from '@auth/schemas/signin';
+import HTTP_STATUS from 'http-status-codes';
+import JWT from 'jsonwebtoken';
+
 import { config } from '@root/config';
+
+import { joiValidation } from '@global/decorators/joi-validation.decorators';
+import { BadRequestError } from '@global/helpers/error-handler';
+
+import { IAuthDocument } from '@auth/interfaces/auth.interface';
+import { loginSchema } from '@auth/schemas/signin';
+
+import { authService } from '@service/db/auth.service';
+import { userService } from '@service/db/user.service';
+
 import { IUserDocument } from '@user/interfaces/user.interface';
-import { userService } from '@services/db/user.service';
 
 export class SignIn {
   @joiValidation(loginSchema)
@@ -52,7 +57,7 @@ export class SignIn {
     } as IUserDocument;
 
     res.status(HTTP_STATUS.OK).json({
-      message: 'User login successfully!',
+      message: 'User login successfully',
       user: userDocument,
       token: userJwt,
     });

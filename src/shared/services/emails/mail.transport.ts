@@ -1,8 +1,10 @@
+import sendGridMail from '@sendgrid/mail';
+import Logger from 'bunyan';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-import Logger from 'bunyan';
-import sendGridMail from '@sendgrid/mail';
+
 import { config } from '@root/config';
+
 import { BadRequestError } from '@global/helpers/error-handler';
 
 interface IMailOptions {
@@ -53,7 +55,7 @@ class MailTransport {
 
     try {
       await transporter.sendMail(mailOptions);
-      log.info('Development email send successfully!');
+      log.info('Development email send successfully');
     } catch (error) {
       log.error('Error sending email', error);
       throw new BadRequestError('Error sending email');
@@ -74,7 +76,7 @@ class MailTransport {
 
     try {
       await sendGridMail.send(mailOptions);
-      log.info('Production email send successfully!');
+      log.info('Production email send successfully');
     } catch (error) {
       log.error('Error sending email', error);
       throw new BadRequestError('Error sending email');

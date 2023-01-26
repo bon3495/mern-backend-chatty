@@ -1,5 +1,22 @@
 {
   "tabWidth": 2,
   "singleQuote": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "importOrder": [
+    "^@root/(.*)$",
+    "^@global/(.*)$",
+    "^@worker/(.*)$",
+    "^@auth/(.*)$",
+    "^@service/(.*)$",
+    "^@socket/(.*)$",
+    "^@user/(.*)$",
+    "^[./]"
+  ],
+  "importOrderBuiltinModulesToTop": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderMergeDuplicateImports": true,
+  "importOrderCombineTypeAndValueImports": true,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

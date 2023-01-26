@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
 import bunyan from 'bunyan';
 import cloudinary from 'cloudinary';
+import dotenv from 'dotenv';
 
 dotenv.config({});
 

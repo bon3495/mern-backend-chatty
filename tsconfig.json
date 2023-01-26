@@ -5,7 +5,7 @@
     "lib": ["DOM", "ES2015"],
     "baseUrl": ".",
     "outDir": "./build",
-    "rootDir": "src",
+    "rootDir": ".",
     "strict": true,
     "noImplicitAny": true,
     "noUnusedLocals": false,
@@ -27,9 +27,9 @@
       "@auth/*": ["src/features/auth/*"],
       "@user/*": ["src/features/user/*"],
       "@global/*": ["src/shared/globals/*"],
-      "@services/*": ["src/shared/services/*"],
-      "@sockets/*": ["src/shared/sockets/*"],
-      "@workers/*": ["src/shared/workers/*"],
+      "@service/*": ["src/shared/services/*"],
+      "@socket/*": ["src/shared/sockets/*"],
+      "@worker/*": ["src/shared/workers/*"],
       "@root/*": ["src/*"]
     }
   }

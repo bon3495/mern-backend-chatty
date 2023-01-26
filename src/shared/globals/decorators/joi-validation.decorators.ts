@@ -1,6 +1,7 @@
 import { Request } from 'express';
-import { JoiRequestValidationError } from '@global/helpers/error-handler';
 import { ObjectSchema } from 'joi';
+
+import { JoiRequestValidationError } from '@global/helpers/error-handler';
 
 type IJoiDecorator = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

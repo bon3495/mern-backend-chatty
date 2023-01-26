@@ -1,21 +1,26 @@
-import HTTP_STATUS from 'http-status-codes';
-import { ObjectId } from 'mongodb';
+import { UploadApiResponse } from 'cloudinary';
 import { Request, Response } from 'express';
+import HTTP_STATUS from 'http-status-codes';
 import JWT from 'jsonwebtoken';
 import { omit } from 'lodash';
+import { ObjectId } from 'mongodb';
+
+import { config } from '@root/config';
+
 import { joiValidation } from '@global/decorators/joi-validation.decorators';
-import { signupSchema } from '@auth/schemas/signup';
-import { IAuthDocument, ISignUpData } from '@auth/interfaces/auth.interface';
-import { authService } from '@services/db/auth.service';
+import { uploads } from '@global/helpers/cloudinary-upload';
 import { BadRequestError } from '@global/helpers/error-handler';
 import { Helpers } from '@global/helpers/helpers';
-import { UploadApiResponse } from 'cloudinary';
-import { uploads } from '@global/helpers/cloudinary-upload';
+
+import { IAuthDocument, ISignUpData } from '@auth/interfaces/auth.interface';
+import { signupSchema } from '@auth/schemas/signup';
+
+import { authService } from '@service/db/auth.service';
+import { authQueue } from '@service/queues/auth.queue';
+import { userQueue } from '@service/queues/user.queue';
+import { UserCache } from '@service/redis/user.cache';
+
 import { IUserDocument } from '@user/interfaces/user.interface';
-import { UserCache } from '@services/redis/user.cache';
-import { authQueue } from '@services/queues/auth.queue';
-import { userQueue } from '@services/queues/user.queue';
-import { config } from '@root/config';
 
 const userCache: UserCache = new UserCache();
 
@@ -80,7 +85,7 @@ export class SignUp {
     req.session = { jwt: userJwt };
 
     res.status(HTTP_STATUS.CREATED).json({
-      message: 'User created successfully!',
+      message: 'User created successfully',
       user: userDataForCache,
       token: userJwt,
     });
