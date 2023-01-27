@@ -2,9 +2,7 @@ import sendGridMail from '@sendgrid/mail';
 import Logger from 'bunyan';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-
 import { config } from '@root/config';
-
 import { BadRequestError } from '@global/helpers/error-handler';
 
 interface IMailOptions {

@@ -1,6 +1,5 @@
 import { Request } from 'express';
 import { ObjectSchema } from 'joi';
-
 import { JoiRequestValidationError } from '@global/helpers/error-handler';
 
 type IJoiDecorator = (

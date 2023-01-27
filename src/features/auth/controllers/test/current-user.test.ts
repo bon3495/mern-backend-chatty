@@ -1,16 +1,12 @@
 import { Request, Response } from 'express';
-
 import {
   authMockRequest,
   authMockResponse,
   authUserPayload,
 } from '@root/mocks/auth.mock';
 import { existingUser } from '@root/mocks/user.mock';
-
 import { UserCache } from '@service/redis/user.cache';
-
 import { IUserDocument } from '@user/interfaces/user.interface';
-
 import { CurrentUser } from '../current-user';
 
 jest.mock('@service/queues/base.queue');

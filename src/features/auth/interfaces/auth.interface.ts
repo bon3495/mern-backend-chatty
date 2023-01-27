@@ -1,6 +1,5 @@
 import { ObjectId } from 'mongodb';
 import { Document } from 'mongoose';
-
 import { IUserDocument } from '@user/interfaces/user.interface';
 
 declare global {
