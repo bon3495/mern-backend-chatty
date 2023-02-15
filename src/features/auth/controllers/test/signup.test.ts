@@ -23,6 +23,7 @@ describe('SignUp', () => {
 
   afterEach(() => {
     jest.clearAllMocks();
+    jest.clearAllTimers();
   });
 
   it('Should throw an error if username is not available', () => {

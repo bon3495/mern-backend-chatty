@@ -20,6 +20,7 @@ class AuthRoutes {
     return this.router;
   }
 
+  // split sign out into a separate part because if you want to sign out, you need to login first, so this route need to some methods for authorization.
   public signoutRoute(): Router {
     this.router.get('/signout', SignOut.prototype.update);
 

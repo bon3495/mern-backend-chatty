@@ -5,7 +5,7 @@ import { AuthPayload } from '@auth/interfaces/auth.interface';
 import { NotAuthorizedError } from './error-handler';
 
 class AuthMiddleware {
-  public verifyUser(req: Request, res: Response, next: NextFunction): void {
+  public verifyUser(req: Request, _res: Response, next: NextFunction): void {
     if (!req.session?.jwt) {
       throw new NotAuthorizedError(
         'Token is not available. Please login again!'

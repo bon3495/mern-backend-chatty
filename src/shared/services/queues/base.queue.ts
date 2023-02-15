@@ -5,10 +5,10 @@ import Queue, { Job } from 'bull';
 import Logger from 'bunyan';
 import { config } from '@root/config';
 import { IAuthJob } from '@auth/interfaces/auth.interface';
-import { IEmailJob } from '@user/interfaces/user.interface';
+import { IEmailJob, IUserJob } from '@user/interfaces/user.interface';
 import { IPostJobData } from '@post/interfaces/post.interface';
 
-type IBaseJobData = IAuthJob | IEmailJob | IPostJobData;
+type IBaseJobData = IAuthJob | IEmailJob | IPostJobData | IUserJob;
 
 let bullAdapters: BullAdapter[] = [];
 export let serverAdapter: ExpressAdapter;
