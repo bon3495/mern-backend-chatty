@@ -1,12 +1,10 @@
-import { serverAdapter } from '@service/queues/base.queue';
 import Logger from 'bunyan';
 import { Application } from 'express';
-
 import { authMiddleware } from '@global/helpers/auth-middleware';
-
 import { authRoutes } from '@auth/routes/authRoutes';
 import { currentUserRoute } from '@auth/routes/currentUserRoute';
-
+import { serverAdapter } from '@service/queues/base.queue';
+import { postRoutes } from '@post/routes/postRoutes';
 import { config } from './config';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -20,6 +18,7 @@ export default (app: Application) => {
     app.use(BASE_PATH, authRoutes.routes());
     app.use(BASE_PATH, authRoutes.signoutRoute());
     app.use(BASE_PATH, authMiddleware.verifyUser, currentUserRoute.routes());
+    app.use(BASE_PATH, authMiddleware.verifyUser, postRoutes.routes());
   };
 
   routes();

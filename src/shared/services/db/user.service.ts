@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-
 import { IUserDocument } from '@user/interfaces/user.interface';
 import { UserModel } from '@user/models/user.schema';
 

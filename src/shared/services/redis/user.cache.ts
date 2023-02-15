@@ -1,12 +1,8 @@
 import Logger from 'bunyan';
-
 import { config } from '@root/config';
-
 import { ServerError } from '@global/helpers/error-handler';
 import { Helpers } from '@global/helpers/helpers';
-
 import { IUserDocument } from '@user/interfaces/user.interface';
-
 import { BaseCache } from './base.cache';
 
 const log: Logger = config.createLogger('userCache');

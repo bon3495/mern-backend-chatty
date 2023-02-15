@@ -3,14 +3,12 @@ import { BullAdapter } from '@bull-board/api/bullAdapter';
 import { ExpressAdapter } from '@bull-board/express';
 import Queue, { Job } from 'bull';
 import Logger from 'bunyan';
-
 import { config } from '@root/config';
-
 import { IAuthJob } from '@auth/interfaces/auth.interface';
+import { IEmailJob, IUserJob } from '@user/interfaces/user.interface';
+import { IPostJobData } from '@post/interfaces/post.interface';
 
-import { IEmailJob } from '@user/interfaces/user.interface';
-
-type IBaseJobData = IAuthJob | IEmailJob;
+type IBaseJobData = IAuthJob | IEmailJob | IPostJobData | IUserJob;
 
 let bullAdapters: BullAdapter[] = [];
 export let serverAdapter: ExpressAdapter;

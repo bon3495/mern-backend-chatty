@@ -1,16 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response } from 'express';
-
 import {
   authMock,
   authMockRequest,
   authMockResponse,
 } from '@root/mocks/auth.mock';
-
 import { CustomError } from '@global/helpers/error-handler';
-
 import { Password } from '@auth/controllers/password';
-
 import { authService } from '@service/db/auth.service';
 import { emailQueue } from '@service/queues/email.queue';
 

@@ -1,7 +1,5 @@
 import { Request, Response } from 'express';
-
 import { authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
-
 import { SignOut } from '@auth/controllers/signout';
 
 const USERNAME = 'Manny';

@@ -1,6 +1,7 @@
 {
   "tabWidth": 2,
   "singleQuote": true,
+  "printWidth": 80,
   "arrowParens": "avoid",
   "importOrder": [
     "^@root/(.*)$",
@@ -10,6 +11,7 @@
     "^@service/(.*)$",
     "^@socket/(.*)$",
     "^@user/(.*)$",
+    "^@post/(.*)$",
     "^[./]"
   ],
   "importOrderBuiltinModulesToTop": true,
@@ -17,6 +19,5 @@
   "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
   "importOrderMergeDuplicateImports": true,
   "importOrderCombineTypeAndValueImports": true,
-  "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

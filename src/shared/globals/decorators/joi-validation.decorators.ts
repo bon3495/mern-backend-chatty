@@ -1,6 +1,5 @@
 import { Request } from 'express';
 import { ObjectSchema } from 'joi';
-
 import { JoiRequestValidationError } from '@global/helpers/error-handler';
 
 type IJoiDecorator = (
@@ -21,6 +20,16 @@ export function joiValidation(schema: ObjectSchema): IJoiDecorator {
 
       // validateAsync or validate
       const { error } = await Promise.resolve(schema.validate(req.body));
+      /**
+       * if (error?.detail?) {
+       *  error?.details = [{
+                              message: 'error message...',
+                              path: [Array],
+                              type: 'string.min',
+                              context: [Object]
+                            }]
+       * }
+       */
       if (error?.details) {
         throw new JoiRequestValidationError(error.details[0].message);
       }

@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   authMock,
@@ -7,12 +6,9 @@ import {
   authMockResponse,
 } from '@root/mocks/auth.mock';
 import { mergedAuthAndUserData } from '@root/mocks/user.mock';
-
 import { CustomError } from '@global/helpers/error-handler';
 import { Helpers } from '@global/helpers/helpers';
-
 import { SignIn } from '@auth/controllers/signin';
-
 import { authService } from '@service/db/auth.service';
 import { userService } from '@service/db/user.service';
 

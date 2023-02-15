@@ -1,6 +1,5 @@
 import { compare, hash } from 'bcryptjs';
 import { model, Model, Schema } from 'mongoose';
-
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
 
 const SALT_ROUND = 10;

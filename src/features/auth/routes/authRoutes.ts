@@ -1,5 +1,4 @@
 import express, { Router } from 'express';
-
 import { Password } from '@auth/controllers/password';
 import { SignIn } from '@auth/controllers/signin';
 import { SignOut } from '@auth/controllers/signout';
@@ -21,6 +20,7 @@ class AuthRoutes {
     return this.router;
   }
 
+  // split sign out into a separate part because if you want to sign out, you need to login first, so this route need to some methods for authorization.
   public signoutRoute(): Router {
     this.router.get('/signout', SignOut.prototype.update);
 

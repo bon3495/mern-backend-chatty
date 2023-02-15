@@ -1,8 +1,7 @@
-import { redisConnection } from '@service/redis/redis.connection';
 import Logger from 'bunyan';
 import mongoose from 'mongoose';
-
 import { config } from '@root/config';
+import { redisConnection } from '@service/redis/redis.connection';
 
 const log: Logger = config.createLogger('setupDatabase');
 
