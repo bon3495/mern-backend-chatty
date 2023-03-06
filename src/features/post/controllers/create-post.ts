@@ -50,7 +50,7 @@ export class CreatePost {
     socketIOPostObject.emit('add post', createdPost);
 
     // Add Post to Redis
-    postCache.savePostToCache({
+    await postCache.savePostToCache({
       key: postObjectId,
       currentUserId: `${req.currentUser?.userId}`,
       uId: `${req.currentUser?.uId}`,
