@@ -12,6 +12,7 @@
     "^@socket/(.*)$",
     "^@user/(.*)$",
     "^@post/(.*)$",
+    "^@reaction/(.*)$",
     "^[./]"
   ],
   "importOrderBuiltinModulesToTop": true,
