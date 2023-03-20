@@ -1,0 +1,55 @@
+@baseUrl = http://localhost:5000
+
+@urlPath = api/v1
+
+###
+POST {{baseUrl}}/{{urlPath}}/post/reaction
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "userTo": "63cb7e247c140e67122d672f",
+  "postId": "6416d4a965c609549440c293",
+  "type": "love",
+  "profilePicture": "profilePicture",
+  "previousReaction": "",
+  "postReactions": {"angry": 0, "love": 1, "like": 0, "haha": 0, "sad": 0, "wow": 0}
+}
+
+###
+DELETE {{baseUrl}}/{{urlPath}}/post/reaction/6416d4a965c609549440c293
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "previousReaction": "love",
+  "postReactions": {"angry": 0, "love": 0, "like": 0, "haha": 0, "sad": 0, "wow": 0}
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/post/reaction/6414bca6ff4837a6dba92442
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{}
+
+###
+GET {{baseUrl}}/{{urlPath}}/post/single-reaction/6414bca6ff4837a6dba92442
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "username": "bontran2"
+}
+
+###
+GET {{baseUrl}}/{{urlPath}}/post/username-reaction/bontran2
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{}

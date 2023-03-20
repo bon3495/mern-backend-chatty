@@ -10,7 +10,8 @@
     "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
     "prettier:fix": "prettier --write 'src/**/*.{ts,json}'",
     "build": "ttsc -p .",
-    "test": "jest --coverage=true -w=1 --forceExit --detectOpenHandles --watchAll=true"
+    "test": "jest --coverage=true -w=1 --forceExit --detectOpenHandles --watchAll=true",
+    "start": "nodemon ./build/src/app.js  | ./node_modules/.bin/bunyan"
   },
   "keywords": [],
   "author": "",

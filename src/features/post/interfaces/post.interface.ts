@@ -1,15 +1,6 @@
-// import { IReactions } from '@root/features/reactions/interfaces/reaction.interface';
 import { ObjectId } from 'mongodb';
 import mongoose, { Document } from 'mongoose';
-
-interface IReactions {
-  like: number;
-  love: number;
-  haha: number;
-  wow: number;
-  sad: number;
-  angry: number;
-}
+import { IReactions } from '@reaction/interfaces/reaction.interface';
 
 export interface IPostDocument extends Document {
   _id?: string | mongoose.Types.ObjectId;

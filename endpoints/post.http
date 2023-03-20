@@ -9,9 +9,9 @@ Accept: application/json
 withCredentials: true
 
 {
-  "post": "this is third post",
+  "post": "this is my third post",
   "bgColor": "#ccc",
-  "feelings": "Haha",
+  "feelings": "",
   "gifUrl": "",
   "privacy": "Public",
   "profilePicture": "https://res.cloudinary.com/dtp40zcfb/image/upload/v1674156495/63c999cb883be9c3bda23e05"
@@ -26,7 +26,7 @@ withCredentials: true
 {
   "post": "this is post with image",
   "bgColor": "#ccc",
-  "feelings": "Haha",
+  "feelings": "",
   "gifUrl": "",
   "privacy": "Public",
   "profilePicture": "https://res.cloudinary.com/dtp40zcfb/image/upload/v1674156495/63c999cb883be9c3bda23e05",
