@@ -10,7 +10,7 @@ import { uploads } from '@global/helpers/cloudinary-upload';
 import { BadRequestError } from '@global/helpers/error-handler';
 import { Helpers } from '@global/helpers/helpers';
 import { IAuthDocument, ISignUpData } from '@auth/interfaces/auth.interface';
-import { signupSchema } from '@auth/schemas/signup';
+import { signupSchema } from '@auth/schemas/signup.schema';
 import { authService } from '@service/db/auth.service';
 import { authQueue } from '@service/queues/auth.queue';
 import { userQueue } from '@service/queues/user.queue';

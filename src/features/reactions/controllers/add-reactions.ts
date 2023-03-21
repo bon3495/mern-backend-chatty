@@ -8,7 +8,7 @@ import {
   IReactionDocument,
   IReactionJob,
 } from '@reaction/interfaces/reaction.interface';
-import { addReactionSchema } from '@reaction/schemas/reactions';
+import { addReactionSchema } from '@reaction/schemas/reactions.schema';
 
 const reactionCache: ReactionCache = new ReactionCache();
 

@@ -8,7 +8,7 @@ import { postQueue } from '@service/queues/post.queue';
 import { PostCache } from '@service/redis/post.cache';
 import { socketIOPostObject } from '@socket/post.socket';
 import { IPostDocument } from '@post/interfaces/post.interface';
-import { postSchema } from '@post/schemas/post.schemes';
+import { postSchema } from '@post/schemas/post.schema';
 
 const postCache: PostCache = new PostCache();
 

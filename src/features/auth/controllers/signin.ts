@@ -5,7 +5,7 @@ import { config } from '@root/config';
 import { joiValidation } from '@global/decorators/joi-validation.decorators';
 import { BadRequestError } from '@global/helpers/error-handler';
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
-import { loginSchema } from '@auth/schemas/signin';
+import { loginSchema } from '@auth/schemas/signin.schema';
 import { authService } from '@service/db/auth.service';
 import { userService } from '@service/db/user.service';
 import { IUserDocument } from '@user/interfaces/user.interface';

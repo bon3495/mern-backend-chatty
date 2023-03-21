@@ -7,7 +7,7 @@ import { config } from '@root/config';
 import { joiValidation } from '@global/decorators/joi-validation.decorators';
 import { BadRequestError } from '@global/helpers/error-handler';
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
-import { emailSchema, passwordSchema } from '@auth/schemas/password';
+import { emailSchema, passwordSchema } from '@auth/schemas/password.schema';
 import { authService } from '@service/db/auth.service';
 import { forgotPasswordTemplate } from '@service/emails/templates/forgot-password';
 import { resetPasswordTemplate } from '@service/emails/templates/reset-password';
