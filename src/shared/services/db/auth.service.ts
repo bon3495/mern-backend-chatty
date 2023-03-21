@@ -1,6 +1,6 @@
 import { Helpers } from '@global/helpers/helpers';
 import { IAuthDocument } from '@auth/interfaces/auth.interface';
-import { AuthModel } from '@auth/models/auth.schema';
+import { AuthModel } from '@auth/models/auth.model';
 
 class AuthService {
   public async createAuthUser(data: IAuthDocument): Promise<void> {

@@ -4,13 +4,13 @@ import { Helpers } from '@global/helpers/helpers';
 import { UserCache } from '@service/redis/user.cache';
 import { IUserDocument } from '@user/interfaces/user.interface';
 import { IPostDocument } from '@post/interfaces/post.interface';
-import { PostModel } from '@post/models/post.schema';
+import { PostModel } from '@post/models/post.model';
 import {
   IQueryReaction,
   IReactionDocument,
   IReactionJob,
 } from '@reaction/interfaces/reaction.interface';
-import { ReactionModel } from '@reaction/models/reaction.schema';
+import { ReactionModel } from '@reaction/models/reaction.model';
 
 const userCache: UserCache = new UserCache();
 
